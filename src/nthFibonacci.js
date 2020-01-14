@@ -17,6 +17,48 @@
 // etc...
 
 var nthFibonacci = function(n) {
+  // I: n: number, integer
+  // O: nth Fibonaicci number
+  // Assumptions/constraints
+  //   n: integer, but check!
+  //   n: n > 1, but check
+
   // Your code here
+  if (!Number.isInteger(n)) {
+    // n is not an integer: invalid 
+    return "'n' is not an integer"
+
+  } else if (n < 0) {
+    // n < 1: invalid 
+    return "'n' is less than 1"
+
+  } else if (n === 0) {
+    // n < 1: invalid 
+    return 0
+
+  } else if (n < 2) {
+    // base case n = 1
+    return 1
+  } else if (n > 1) {
+    // recursive case n > 1
+    return (nthFibonacci(n - 1) + nthFibonacci(n - 2))
+  }
 };
+
+// nthFibonnaci: data and tests
+
+let n = "string";
+console.log("string=>nNAI: ", nthFibonacci(n));
+
+n = 0;
+console.log("0,n<1=>too small: ", nthFibonacci(n));
+
+n = 1;
+console.log("1=>1: ", nthFibonacci(n));
+
+n = 4;
+console.log("4=>3: ", nthFibonacci(n));
+
+n = 5;
+console.log("5=>5: ", nthFibonacci(n));
 
